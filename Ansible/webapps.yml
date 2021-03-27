@@ -1,0 +1,16 @@
+
+root@e986d77baf8a:~/.ssh# nano /etc/ansible/hosts
+root@e986d77baf8a:~/.ssh# ls
+id_rsa  id_rsa.pub  known_hosts  my-playbook,yml  my-playbook.yml
+root@e986d77baf8a:~/.ssh# nano /etc/ansible/yml
+ssh# etc/ansible/elkfile.yml
+
+
+root@e986d77baf8a:~/.ssh# nano /etc/ansible/elkfile2.yml
+ssh# ansible-playbook /etc/ansible/elkfile2.yml
+
+
+root@e986d77baf8a:~/.ssh# nano /etc/ansible/webapps.yml
+ssh# ansible-playbook /etc/ansible/webapps.yml
+
+
