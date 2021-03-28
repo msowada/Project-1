@@ -1,0 +1,83 @@
+In the Diagrams we created a virtual network 
+Overview of what was created
+
+Creating a New vNet
+ This will allowstraffic to pass between vNets and regions. 
+ This will allow traffic to pass in both directions.
+
+Creating virtual machines
+Jumpbox
+Web 1
+Web 2
+Elk
+
+Downloading and Configuring the Container
+Add your new VM to the Ansible `hosts` file.
+Create a new Ansible playbook to use for your new ELK virtual machine.
+The header of the Ansible playbook can specify a different group of machines as well as a different remote user 
+
+Launching and Exposing the Container 
+The ELK container is installed, SSH into the container and checked that`elk-docker` container is running.
+
+Identity and Access Management
+This ELK web server runs on port `5601`. Create an incoming rule for security group that allows TCP traffic over port `5601` from home IP address.
+Verify that you can load the ELK stack server from your browser at `http://[your.VM.IP]:5601/app/kibana`.
+
+Host File 
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/IP can be a member of multiple groups
+# You need only a [webservers] and [elkservers] group.
+
+# List the IP Addresses of your webservers
+# You should have at least 2 IP addresses
+[webservers]
+10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+
+# List the IP address of your ELK server
+# There should only be one IP address
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
+Configure Elk VM with Docker
+Added Virtual network peering
+-connects virtual networks to each other with virtual networks
+
+Installing Filebeat on the DVWA Container
+choose orrect Linux Filebeat installation instructions
+Created the Filebeat Configuration File
+Next, create a Filebeat configuration file and edit this file to correct settings to work in ELK server
+
+Created another Ansible playbook that accomplishes the Linux Filebeat installation instructions
+ansible-playbook filebeat-playbook.yml
+Verifying Installation and Playbook
+Check that ELK stack was receiving logs.
+
+Install Metric BeMetricbeat 
+collect metrics from the operating system and from services running on the server.
+Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify,
+such as Elasticsearch or Logstash
+
+Diagrams created 
+
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the "D*mn Vulnerable Web Application"
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. 
+The load balancer ensures that work to process incoming traffic will be shared by both vulnerable web servers. Access controls will ensure that only authorized users 
+will be able to connect in the first place.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems of the VMs on the network, 
+as well as watch system metrics, such as CPU usage; attempted SSH logins
+
+ELK Server Configuration
+The ELK VM exposes an Elastic Stack instance. Docker is used to download and manage an ELK container.
+Rather than configure ELK manually, we opted to develop a reusable Ansible Playbook to accomplish the task. This playbook is duplicated below.
+To use this playbook, one must log into the Jump Box, then issue: ansible-playbook install_elk.yml elk. This runs the install_elk.yml playbook on the elk host.
+
+
