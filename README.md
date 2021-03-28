@@ -85,6 +85,7 @@ The playbook implements the following tasks:
   
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
+![image](https://user-images.githubusercontent.com/81271596/112738307-aafeeb00-8f2f-11eb-8fcc-31544de3d350.png)
 
 (https://user-images.githubusercontent.com/81271596/112737955-9bca6e00-8f2c-11eb-8114-42085826f6a0.png)
 
