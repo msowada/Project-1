@@ -61,7 +61,7 @@ ls
 The existing files should be log_evidence and email_evidence.
 
 
-Script files
+More Script files that were created for the activities done in class
 
 #!bash my_script.sh 
 Run nano my_script.sh
